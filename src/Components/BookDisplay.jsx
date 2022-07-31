@@ -10,7 +10,6 @@ function BookDisplay({ book, isFavorite, add, remove }) {
       <img className="px-2 p-3 col" src={pic} alt={title} />
       {isFavorite && (
         <button onClick={() => remove(book_id)} className="mt-4 mx-auto">
-          {" "}
           Remove Favorite
         </button>
       )}

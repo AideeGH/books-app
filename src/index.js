@@ -5,12 +5,15 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { SearchProvider } from "./Contexts/SearchContext";
 import { FavoritesProvider } from "./Contexts/FavoritesContext";
+import { UserProvider } from "./Contexts/UserContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <FavoritesProvider>
     <SearchProvider>
-      <App />
+      <UserProvider>
+        <App />
+      </UserProvider>
     </SearchProvider>
   </FavoritesProvider>
 );

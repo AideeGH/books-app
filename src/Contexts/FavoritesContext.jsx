@@ -12,7 +12,7 @@ export function FavoritesProvider(props) {
 
   const remove = useCallback(
     (id) => {
-      setFavorites((curr) => curr.filter((val) => val.book_id !== val.id));
+      setFavorites((curr) => curr.filter((val) => val.book_id !== id));
     },
     [setFavorites]
   );
