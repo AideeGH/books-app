@@ -17,9 +17,7 @@ function FavoritesPage() {
             <BookDisplay book={val} isFavorite={true} remove={remove} />
           ))}
         {favorites.length === 0 && (
-          <h3 className="text-center col-12">
-            No Favorites. Go Back To Search And Add Some!
-          </h3>
+          <h3 className="text-center col-12">No Favorites Yet</h3>
         )}
       </div>
     </div>

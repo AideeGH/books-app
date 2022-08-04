@@ -8,13 +8,13 @@
   --transition: all 300ms ease-in-out;
 }
 * {
-  padding: 0;
+  padding: 10px;
   margin: 0;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
 }
-html {
+/* html {
   font-size: 10px;
-}
+} */
 body {
   font-size: 1.6rem;
   line-height: 1.7;
