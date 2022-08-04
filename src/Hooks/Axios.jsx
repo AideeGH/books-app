@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 const baseUrl =
-  "https://www.googleapis.com/books/v1/volumes?key=AIzaSyAZGPfArgpfZZCyXjbtuVicjGLLwd03iPc";
+  "https://www.googleapis.com/books/v1/volumes?&key=AIzaSyAZGPfArgpfZZCyXjbtuVicjGLLwd03iPc";
 
 export default function useAxios(url) {
   const [bookData, setBookData] = useState(null);
@@ -23,6 +23,11 @@ export default function useAxios(url) {
           title: val.volumeInfo.title,
           author: val.volumeInfo.authors,
           pic: val.volumeInfo.imageLinks.thumbnail,
+          pageCount: val.volumeInfo.pageCount,
+          language: val.volumeInfo.language,
+          publisher: val.volumeInfo.publisher,
+          description: val.volumeInfo.description,
+          previewLink: val.volumeInfo.infoLink,
         }));
         setBookData(books);
       } catch (e) {

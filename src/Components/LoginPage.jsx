@@ -39,7 +39,7 @@ function LoginPage() {
           onChange={(e) => setPassword(e.target.value)}
         ></input>
         <i className="bi bi-eye-slash" id="togglePassword"></i>
-        <button className="btn btn-primary" onClick={showPassword}>
+        <button className="btn btn-primary btn-info" onClick={showPassword}>
           Show Password
         </button>
         <div className="d-grid gap-2 col-6 mx-auto">
