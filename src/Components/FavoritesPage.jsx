@@ -8,7 +8,9 @@ function FavoritesPage() {
   const { loggedInUser } = useContext(UserContext);
   return (
     <div className="d-flex flex-wrap justify-content-center">
-      <h1 className="my-4 col-12 text-center">Favorites for {loggedInUser}</h1>
+      <h1 className="my-4 col-12 text-center">
+        Favorites for {loggedInUser && loggedInUser.username}
+      </h1>
 
       <div className="col-12 d-flex flex-wrap mt-4">
         {favorites &&

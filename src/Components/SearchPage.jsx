@@ -3,11 +3,13 @@ import useAxios from "../Hooks/Axios";
 import BookDisplay from "./BookDisplay";
 import { FaSearch } from "react-icons/fa";
 import { FavoritesContext } from "../Contexts/FavoritesContext";
+import { SearchContext } from "../Contexts/SearchContext";
 
 function SearchPage() {
   const [url, setUrl] = useState("");
   const [search, setSearch] = useState("");
   const { bookData: books, error } = useAxios(url);
+  const { searchResults, setSearchResults } = useContext(SearchContext);
   const { favorites, add, remove } = useContext(FavoritesContext);
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -16,6 +18,12 @@ function SearchPage() {
     () => favorites.map((val) => val.book_id),
     [favorites]
   );
+
+  useEffect(() => {
+    if (books) {
+      setSearchResults(books);
+    }
+  }, [books, setSearchResults]);
 
   console.log(books);
   console.log(error);

@@ -47,8 +47,8 @@ function LoginPage() {
             className="btn btn-primary btn-info btn-lg border"
             onClick={() => {
               if (username.length > 0 && password.length > 0) {
-                login(username);
-                navigate("/search");
+                login(username, password);
+                // navigate("/search");
               }
             }}
           >
