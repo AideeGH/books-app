@@ -40,7 +40,7 @@ export function UserProvider(props) {
 
   const verify = useCallback(async () => {
     try {
-      const response = await axios.get("/api/user/verify");
+      const response = await axios.get("/api/users/verify");
       if (response.data.success) {
         setLoggedInUser(response.data.data);
       }

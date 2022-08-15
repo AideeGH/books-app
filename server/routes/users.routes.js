@@ -55,12 +55,12 @@ router.put("/register", async (req, res) => {
   res.send(resObj);
 });
 
-function verifyData(username, passpord) {
+function verifyData(username, password) {
   if (!username || username.length < 4 || username.length > 20) {
     return false;
   }
 
-  if (!password || password.length < 8 || passpord.length > 30) {
+  if (!password || password.length < 8 || password.length > 30) {
     return false;
   }
   return true;

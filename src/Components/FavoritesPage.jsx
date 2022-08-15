@@ -16,7 +16,12 @@ function FavoritesPage() {
         {favorites &&
           favorites.length > 0 &&
           favorites.map((val) => (
-            <BookDisplay book={val} isFavorite={true} remove={remove} />
+            <BookDisplay
+              book={val}
+              key={val.book_id}
+              isFavorite={true}
+              remove={remove}
+            />
           ))}
         {favorites.length === 0 && (
           <h3 className="text-center col-12">No Favorites Yet</h3>

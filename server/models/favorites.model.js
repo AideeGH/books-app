@@ -3,11 +3,12 @@ const query = require("../config/database.config");
 async function add(favorite) {
   try {
     let { insertId } = await query(
-      "INSERT INTO favorites(book_id, user_id, title, pic) VALUES (?,?,?,?)",
+      "INSERT INTO favorites (book_id, user_id, title, pic) VALUES (?,?,?,?)",
       [favorite.book_id, favorite.user_id, favorite.title, favorite.pic]
     );
     return { success: true, data: { ...favorite, id: insertId }, error: null };
   } catch (err) {
+    // console.log(err);
     return { success: false, data: null, error: "Something went wrong" };
   }
 }
@@ -30,7 +31,7 @@ async function getByUser(user_id) {
       "SELECT * FROM favorites where favorites.user_id = ?",
       [user_id]
     );
-    return { success: false, data: null, error: null };
+    return { success: false, data: favorites, error: null };
   } catch (err) {
     console.log(err);
     return { success: false, data: null, error: "Something went wrong" };

@@ -34,7 +34,8 @@ export function FavoritesProvider(props) {
   const add = useCallback(
     async (book) => {
       try {
-        const response = await axios.put("/api/favoirtes/add", book);
+        const response = await axios.put("/api/favorites/add", book);
+        console.log(response.data);
         if (response.data.success) {
           setFavorites((curr) => [...curr, response.data.data]);
         }

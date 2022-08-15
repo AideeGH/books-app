@@ -11,7 +11,13 @@ import Menu from "./Components/Menu";
 import FavoritesPage from "./Components/FavoritesPage";
 import RegisterPage from "./Components/RegisterPage";
 import ProtectedRoute from "./shared/ProtectedRoutes";
+import { UserContext } from "./Contexts/UserContext";
+import { useContext, useEffect } from "react";
 function App() {
+  const { verify } = useContext(UserContext);
+  useEffect(() => {
+    verify();
+  }, []);
   return (
     <>
       <Router>
@@ -28,7 +34,7 @@ function App() {
             element={
               <ProtectedRoute
                 requiresLogin={false}
-                componen={<RegisterPage />}
+                component={<RegisterPage />}
               />
             }
           />

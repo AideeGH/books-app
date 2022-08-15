@@ -54,6 +54,7 @@ function SearchPage() {
                 books.length > 0 &&
                 books.map((val) => (
                   <BookDisplay
+                    key={val.book_id}
                     book={val}
                     isFavorite={faveIDs.includes(val.book_id)}
                     add={add}

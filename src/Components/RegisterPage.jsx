@@ -80,6 +80,7 @@ function RegisterPage() {
           onClick={() => {
             if (userName.length > 0 && password.length > 0) {
               register(userName, password);
+              navigate("/login");
             }
           }}
         >
