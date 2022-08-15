@@ -9,13 +9,13 @@ import { UserProvider } from "./Contexts/UserContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <FavoritesProvider>
-    <SearchProvider>
-      <UserProvider>
+  <UserProvider>
+    <FavoritesProvider>
+      <SearchProvider>
         <App />
-      </UserProvider>
-    </SearchProvider>
-  </FavoritesProvider>
+      </SearchProvider>
+    </FavoritesProvider>
+  </UserProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function

@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { UserContext } from "../Contexts/UserContext";
 function RegisterPage() {
+  const { register } = useContext(UserContext);
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const [cPassword, setCPassword] = useState("");
@@ -77,7 +79,7 @@ function RegisterPage() {
           className="btn btn-primary"
           onClick={() => {
             if (userName.length > 0 && password.length > 0) {
-              navigate("/login");
+              register(userName, password);
             }
           }}
         >
