@@ -31,7 +31,7 @@ async function getByUser(user_id) {
       "SELECT * FROM favorites where favorites.user_id = ?",
       [user_id]
     );
-    return { success: false, data: favorites, error: null };
+    return { success: true, data: favorites, error: null };
   } catch (err) {
     console.log(err);
     return { success: false, data: null, error: "Something went wrong" };

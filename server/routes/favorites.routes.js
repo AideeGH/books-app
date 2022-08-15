@@ -26,7 +26,7 @@ router.delete("/delete/:book_id", auth, async (req, res) => {
 
 router.get("/user", auth, async (req, res) => {
   const resObj = await getByUser(req.user.id);
-
+  console.log(resObj);
   return res.send(resObj);
 });
 
