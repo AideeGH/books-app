@@ -15,6 +15,11 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(passport.initialize());
 
+app.enable("trust proxy");
+app.use((req, res, next) => {
+  req.secure ? next() : res.redirect("https://" + req.headers.host + req.url);
+});
+
 app.use(express.static(__dirname + "/build"));
 
 app.use("/api/favorites", favoritesRoutes);
